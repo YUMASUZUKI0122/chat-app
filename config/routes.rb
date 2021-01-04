@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   get 'messages/index'
   devise_for :users
@@ -8,4 +9,11 @@ Rails.application.routes.draw do
 =======
   root to: "messages#index"
 >>>>>>> Stashed changes
+=======
+  root to: "rooms#index"
+  resources :users, only: [:edit, :update]
+  resources :rooms, only: [:new, :create, :destroy] do
+    resources :messages, only: [:index, :create]
+  end
+>>>>>>> master
 end
